@@ -148,6 +148,6 @@ Suspicious. Companies sometimes make this but it is also widely used by attacker
 
 ## Useful Resources
 
-- [Don't Take the Bait: Recognize and Avoid Phishing Attacks](https://www.cyber.gc.ca/en/guidance/dont-take-bait-recognize-and-avoid-phishing-attacks) — Canadian Centre for Cyber Security guide covering common phishing techniques, warning signs, and prevention methods.
+[Don't Take the Bait: Recognize and Avoid Phishing Attacks](https://www.cyber.gc.ca/en/guidance/dont-take-bait-recognize-and-avoid-phishing-attacks) Canadian Centre for Cyber Security guide covering common phishing techniques, warning signs, and prevention methods.
 
 
