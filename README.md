@@ -60,3 +60,46 @@ For example, imagine that the EDR detects a suspicious program on a user’s com
 The analyst could then investigate the incident, block the malicious connection, isolate the computer if necessary, and record how long the process took. After the incident, metrics such as MTTD and MTTR could be reviewed to see how the SOC performed.
 
 Overall, this project helped me understand that SOC detection is a combination of network monitoring, endpoint monitoring, log analysis, threat intelligence, investigation, and response. I also learned that the goal is not simply to create as many alerts as possible. The goal is to create useful detections that help analysts identify real threats quickly while keeping false positives under control.
+
+
+
+
+
+What i did:
+
+I analysed 
+
+Email Security Analysis
+
+This section summarizes the main indicators I checked while reviewing the email headers and message content.
+
+Element	Finding	Notes
+SPF	spf=pass	The sending IP 149.72.142.11 was authorized to send email for the envelope sender domain. This is a good sign, but SPF passing does not automatically mean the email is safe.
+DKIM	dkim=pass for namecheap.com and sendgrid.info	The DKIM signatures were valid, which means the message passed integrity checks and was not changed after it was signed.
+DMARC	dmarc=pass	The visible From domain passed DMARC alignment. This reduces the chance that the sender address was simply spoofed.
+Sender	Namecheap Renewals <renewals@namecheap.com>	The sender address matches the authenticated namecheap.com domain, so there is no obvious mismatch here.
+Return-Path	...@mailserviceemailout1.namecheap.com	The Return-Path is different from the visible sender, but it is still related to Namecheap. This is normal for many bulk email systems.
+Sending IP / Server	o22.mailservice.namecheap.com [149.72.142.11]	The sending server is consistent with the Namecheap mail infrastructure shown in the headers.
+TLS	TLS1_3, TLS_AES_128_GCM_SHA256	The email was encrypted while being transferred to Google’s mail server. This protects the message in transit, but does not prove the content is legitimate.
+Subject	will expire in 7 days - renew now	The subject creates urgency. This is common in phishing emails, although it can also appear in real renewal notifications.
+Call to Action	Renew Now	The message strongly encourages the user to click a link, so checking the actual destination is important.
+Link Destination	http://mailtrackemailout1.namecheap.com/	The button does not go directly to the normal Namecheap website. It uses a tracking/redirect domain and HTTP, so this should be investigated further.
+Repeated Links	Multiple buttons point to the same URL	Renew Now, My Account, Support, and other links use the same destination. This is unusual and can be a phishing indicator.
+Images	Hosted on raw.githubusercontent.com/MalwareCube/SOC101/...	This is one of the strongest suspicious indicators. A real Namecheap email would not normally load official branding from a GitHub SOC training repository.
+Tracking Pixel	1x1 image	A tracking pixel is included in the email. This is common in marketing emails, so it is not malicious by itself.
+Personalization	Hi Rachel and cosmicfusiontech.com	The email uses the recipient’s name and domain to make the message look more believable. This technique can also be used in targeted phishing attacks.
+
+Overall Assessment
+
+The email passes the main authentication checks: SPF, DKIM, and DMARC. This means the sender was authenticated and simple domain spoofing is less likely.
+
+However, there are still several suspicious elements in the message itself. The strongest one is that the images are hosted in the MalwareCube/SOC101 GitHub repository. The email also uses urgency, repeated redirect links, and a strong call to action.
+
+Because of these indicators, this message appears to be a phishing-analysis or SOC training sample rather than a normal production Namecheap email.
+
+Key Takeaway
+
+Passing SPF, DKIM, and DMARC does not automatically mean an email is safe.
+
+These checks confirm that the email was authorized by the sending domain, but the links, content, attachments, and overall context still need to be reviewed.
+
