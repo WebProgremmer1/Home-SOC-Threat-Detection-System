@@ -124,14 +124,11 @@ The sending server is consistent with the Namecheap mail infrastructure shown in
 
 ### TLS Encryption
 
-**Finding:**  
-`TLS1_3`  
 `TLS_AES_128_GCM_SHA256`
 
 **What it means:**  
 The email was encrypted while being transferred between the sending server and Google's mail server.
 
-**Assessment:** ✅ Positive indicator
 
 > TLS protects the email during transmission, but it does not prove that the email itself is legitimate.
 
