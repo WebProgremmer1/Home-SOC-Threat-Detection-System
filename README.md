@@ -62,6 +62,7 @@ The analyst could then investigate the incident, block the malicious connection,
 Overall, this project helped me understand that SOC detection is a combination of network monitoring, endpoint monitoring, log analysis, threat intelligence, investigation, and response. I also learned that the goal is not simply to create as many alerts as possible. The goal is to create useful detections that help analysts identify real threats quickly while keeping false positives under control.
 
 
+![SOC Threat Detection System](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/website.png?raw=true)
 
 
 # Email Security Analysis
