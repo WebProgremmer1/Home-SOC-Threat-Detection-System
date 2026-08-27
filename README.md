@@ -77,7 +77,7 @@ Just want to show which steps i considered before concluding this email is more 
 **What it means:**  
 The sending IP `149.72.142.11` was authorized to send emails for the domain.
 
-### DKIM — PASS
+### DKIM 
 
 **Finding:**  
 `dkim=pass` for `namecheap.com` and `sendgrid.info`
@@ -86,7 +86,7 @@ The sending IP `149.72.142.11` was authorized to send emails for the domain.
 The DKIM signatures are valid, meaning the message passed the integrity check and was not modified after being signed.
 
 
-### DMARC — PASS
+### DMARC 
 
 **Finding:**  
 `dmarc=pass`
@@ -106,7 +106,7 @@ The sender address matches the authenticated `namecheap.com` domain. There is no
 
 ---
 
-### Return-Path
+### Return Path
 
 **Finding:**  
 `...@mailserviceemailout1.namecheap.com`
