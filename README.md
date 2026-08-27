@@ -146,6 +146,8 @@ The subject creates urgency and encourages the recipient to act quickly. Urgency
 
 Suspicious. Companies sometimes make this but it is also widely used by attackers to encourage users to click on the link. This part is tricky you have to know how to identify the difference.  
 
+## Useful Resources
 
+- [Don't Take the Bait: Recognize and Avoid Phishing Attacks](https://www.cyber.gc.ca/en/guidance/dont-take-bait-recognize-and-avoid-phishing-attacks) — Canadian Centre for Cyber Security guide covering common phishing techniques, warning signs, and prevention methods.
 
 
