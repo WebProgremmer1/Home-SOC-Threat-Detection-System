@@ -144,7 +144,7 @@ The email was encrypted while being transferred between the sending server and G
 **What it means:**  
 The subject creates urgency and encourages the recipient to act quickly. Urgency is commonly used in phishing and social-engineering attacks.
 
-Suspicious. Companies sometimes make this but it is also widely used by attackers and encourage users to click on the link. This part is tricky you have to know how to identify the difference.  
+Suspicious. Companies sometimes make this but it is also widely used by attackers to encourage users to click on the link. This part is tricky you have to know how to identify the difference.  
 
 
 
