@@ -66,22 +66,16 @@ Overall, this project helped me understand that SOC detection is a combination o
 
 # Email Security Analysis
 
-This section summarizes the main indicators found while analyzing the email headers and content.
-
----
+Just want to show which steps i considered before concluding this email is more likely some sort of social engineering attack. 
 
 ## Authentication Indicators
 
-### SPF — PASS
+**Interesting Finding:** `spf=pass`
 
-**Finding:** `spf=pass`
+### SPF 
 
 **What it means:**  
 The sending IP `149.72.142.11` was authorized to send emails for the domain.
-
-**Assessment:** ✅ Positive indicator
-
----
 
 ### DKIM — PASS
 
@@ -91,9 +85,6 @@ The sending IP `149.72.142.11` was authorized to send emails for the domain.
 **What it means:**  
 The DKIM signatures are valid, meaning the message passed the integrity check and was not modified after being signed.
 
-**Assessment:** ✅ Positive indicator
-
----
 
 ### DMARC — PASS
 
@@ -103,9 +94,6 @@ The DKIM signatures are valid, meaning the message passed the integrity check an
 **What it means:**  
 The visible `From` domain passed DMARC alignment. This makes simple sender-domain spoofing less likely.
 
-**Assessment:** ✅ Positive indicator
-
----
 
 ### Sender Address
 
@@ -115,7 +103,6 @@ The visible `From` domain passed DMARC alignment. This makes simple sender-domai
 **What it means:**  
 The sender address matches the authenticated `namecheap.com` domain. There is no obvious mismatch between the sender and authenticated domain.
 
-**Assessment:** ✅ Positive indicator
 
 ---
 
@@ -127,10 +114,6 @@ The sender address matches the authenticated `namecheap.com` domain. There is no
 **What it means:**  
 The Return-Path is different from the visible sender address, but it is still under the Namecheap domain. This can be normal for bulk email services.
 
-**Assessment:** ✅ No obvious issue
-
----
-
 ### Sending Server / IP
 
 **Finding:**  
@@ -138,10 +121,6 @@ The Return-Path is different from the visible sender address, but it is still un
 
 **What it means:**  
 The sending server is consistent with the Namecheap mail infrastructure shown in the email headers.
-
-**Assessment:** ✅ Positive indicator
-
----
 
 ### TLS Encryption
 
@@ -168,123 +147,8 @@ The email was encrypted while being transferred between the sending server and G
 **What it means:**  
 The subject creates urgency and encourages the recipient to act quickly. Urgency is commonly used in phishing and social-engineering attacks.
 
-**Assessment:** ⚠️ Suspicious
+Suspicious. Companies sometimes make this but it is also widely used by attackers and encourage users to click on the link. This part is tricky you have to know how to identify the difference.  
 
----
 
-### Call to Action
 
-**Finding:**  
-`Renew Now`
 
-**What it means:**  
-The email strongly encourages the recipient to click a link. The actual destination of the link should therefore be checked carefully.
-
-**Assessment:** ⚠️ Requires investigation
-
----
-
-### Link Destination
-
-**Finding:**  
-`http://mailtrackemailout1.namecheap.com/`
-
-**What it means:**  
-The link does not go directly to the main Namecheap website. It uses a tracking/redirect-style domain and HTTP.
-
-**Assessment:** ⚠️ Suspicious
-
----
-
-### Repeated Links
-
-**Finding:**  
-Several buttons point to the same URL, including:
-
-- `Renew Now`
-- `My Account`
-- `Support`
-- `Account Login`
-- `How to Renew`
-
-**What it means:**  
-Different buttons performing different actions would normally be expected to have different destinations. Having many buttons redirect to the same location should be investigated.
-
-**Assessment:** ⚠️ Suspicious
-
----
-
-### External Images
-
-**Finding:**  
-Images are loaded from:
-
-`raw.githubusercontent.com/MalwareCube/SOC101/...`
-
-**What it means:**  
-The email loads Namecheap branding from a GitHub repository associated with SOC training material. This would not normally be expected in a production Namecheap email.
-
-**Assessment:** 🚩 Strong suspicious indicator
-
----
-
-### Tracking Pixel
-
-**Finding:**
-
-`<img ... width="1" height="1">`
-
-**What it means:**  
-The email contains a 1×1 tracking pixel. Tracking pixels are commonly used to determine whether an email has been opened.
-
-**Assessment:** ℹ️ Not malicious by itself
-
----
-
-### Recipient Personalization
-
-**Finding:**
-
-`Hi Rachel`
-
-`cosmicfusiontech.com`
-
-**What it means:**  
-The email uses the recipient's name and domain to make the message more convincing. Similar personalization can also be used in targeted phishing attacks.
-
-**Assessment:** ⚠️ Social-engineering technique
-
----
-
-## Overall Assessment
-
-The email passes the main authentication checks:
-
-- ✅ **SPF — PASS**
-- ✅ **DKIM — PASS**
-- ✅ **DMARC — PASS**
-- ✅ **TLS — Used**
-
-This makes simple sender spoofing less likely.
-
-However, several suspicious elements were also identified:
-
-- ⚠️ Urgent language
-- ⚠️ Strong call to action
-- ⚠️ Tracking/redirect links
-- ⚠️ Multiple buttons using the same destination
-- 🚩 Images hosted in the `MalwareCube/SOC101` GitHub repository
-
-### Conclusion
-
-The email has **valid authentication**, but the content contains several suspicious indicators.
-
-The strongest indicator is the use of resources from the `MalwareCube/SOC101` repository, suggesting that this specific email is likely part of a **SOC/phishing-analysis training environment**.
-
----
-
-## Key Takeaway
-
-> **SPF, DKIM, and DMARC passing does not automatically mean an email is safe.**
-
-Email authentication should be analyzed together with **URLs, domains, message content, attachments, sender behavior, and other indicators of compromise (IOCs)**.
