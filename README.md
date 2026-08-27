@@ -105,4 +105,8 @@ The page looks fairly basic and attempts to imitate a legitimate Instagram login
 
 This is a common credential-harvesting phishing technique, where attackers create a fake login page that closely resembles the legitimate service.
 
-  
+![Malicious Website](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/mal_website.png?raw=true)
+
+![Website Information](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/inf_website.png?raw=true)
+
+![Website Analysis](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/analyze_web.png?raw=true)  
