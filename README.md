@@ -92,4 +92,17 @@ Suspicious. Companies sometimes make this but it is also widely used by attacker
 
 
 
-Well, we analysed HTML of the file and we tend to believe it is legit website. Let's try another one but we will use some external websites for determining if it is legit or not. 
+Well, we analysed HTML of the file and we tend to believe it is legit website. Let's try another one but we will use some external websites for determining if it is legit or not.
+
+I am going to use this website to determine malicious websites. 
+This website was especially attractive because it is copy of login page of instagram.  
+
+https://snapcart24.github.io/Instagram/
+
+Using a website like URL2PNG, I was able to safely illustrate what the phishing page looks like without directly visiting it.
+
+The page looks fairly basic and attempts to imitate a legitimate Instagram login page. When a victim enters their credentials, the phishing site may capture the submitted information and potentially use it to gain unauthorized access to the victim’s Instagram account.
+
+This is a common credential-harvesting phishing technique, where attackers create a fake login page that closely resembles the legitimate service.
+
+  
