@@ -113,15 +113,52 @@ This is a common credential-harvesting phishing technique, where attackers creat
 
 
 
-Another part of my intrution was analyzing files with Wireshark. 
-I analyzed available file in 2021 with scanned network with a bunch files that transported over the network. 
-The most interesting was when i decided to analyze HTTP requests. There was a file which called .audiodg.exe. Named and looked like usual file. The only weird thing is the size of the packet out of all files it is the largest one. Execept this, it looks like normal file. 
+Network File Analysis with Wireshark
 
-When i analyzed hash of the file, i found out the interesting observation. This hash belongs to trojan which called trojan.msil/agenttesla 55 out of 69 antivirus services flaged it as malicious. 
+Another part of my investigation involved analyzing network traffic and transferred files using Wireshark.
 
-Which subfiles consists the file, as we can see there a legit png and the rest is most likely files with malicious program. 
-Analyzed gave us a lot of information about file.
+I analyzed a network capture from 2021 that contained multiple files transferred over the network. I focused primarily on analyzing HTTP requests and the files associated with them.
 
-Which IP address was contacted: 
+One file in particular caught my attention: .audiodg.exe. At first glance, the filename looked similar to a legitimate Windows system process, and there was nothing obviously suspicious about it.
 
-Like websites which registered spreading the same file 
+However, one unusual characteristic stood out: the packet associated with this file was significantly larger than the others.
+
+This made the file worth investigating further.
+
+Hash Analysis
+
+I extracted the file’s hash and analyzed it using antivirus and malware-detection services.
+
+The results revealed an important finding: the hash was associated with a Trojan identified as Trojan.MSIL/AgentTesla.
+
+55 out of 69 antivirus engines flagged the file as malicious.
+
+Embedded Files
+
+Further analysis showed that the suspicious file contained several embedded or associated files.
+
+As shown below, one appears to be a legitimate PNG image, while the remaining files required further investigation and could potentially be associated with the malicious payload.
+
+Network Indicators
+
+The analysis also provided useful information about the file’s network activity, including the IP addresses it contacted.
+
+I was also able to identify websites and domains associated with the distribution or detection of the same malicious file.
+
+Key Findings
+
+* Suspicious executable identified as .audiodg.exe
+* File stood out because of its unusually large network transfer size
+* Hash analysis associated the file with Trojan.MSIL/AgentTesla
+* 55/69 antivirus engines flagged the file as malicious
+* Additional embedded or associated files were identified
+* Network analysis revealed IP addresses contacted by the file
+* Additional domains associated with the malicious file were identified
+
+Conclusion
+
+What initially appeared to be an ordinary executable became suspicious after examining its network behavior and file characteristics.
+
+Hash analysis provided much stronger evidence, with 55 out of 69 antivirus engines identifying the file as malicious and associating it with Agent Tesla.
+
+This investigation demonstrated how combining Wireshark traffic analysis, file extraction, hash analysis, and threat intelligence can help identify malicious files that may otherwise appear legitimate.
