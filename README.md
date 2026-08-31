@@ -110,3 +110,18 @@ This is a common credential-harvesting phishing technique, where attackers creat
 ![Website Information](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/inf_website.png?raw=true)
 
 ![Website Analysis](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/analyze_web.png?raw=true)  
+
+
+
+Another part of my intrution was analyzing files with Wireshark. 
+I analyzed available file in 2021 with scanned network with a bunch files that transported over the network. 
+The most interesting was when i decided to analyze HTTP requests. There was a file which called .audiodg.exe. Named and looked like usual file. The only weird thing is the size of the packet out of all files it is the largest one. Execept this, it looks like normal file. 
+
+When i analyzed hash of the file, i found out the interesting observation. This hash belongs to trojan which called trojan.msil/agenttesla 55 out of 69 antivirus services flaged it as malicious. 
+
+Which subfiles consists the file, as we can see there a legit png and the rest is most likely files with malicious program. 
+Analyzed gave us a lot of information about file.
+
+Which IP address was contacted: 
+
+Like websites which registered spreading the same file 
