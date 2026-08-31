@@ -113,7 +113,9 @@ This is a common credential-harvesting phishing technique, where attackers creat
 
 
 
-Network File Analysis with Wireshark
+
+
+# Network File Analysis with Wireshark
 
 Another part of my investigation involved analyzing network traffic and transferred files using Wireshark.
 
@@ -133,17 +135,23 @@ The results revealed an important finding: the hash was associated with a Trojan
 
 55 out of 69 antivirus engines flagged the file as malicious.
 
+![Detection](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/detection.png?raw=true)
+
 Embedded Files
 
 Further analysis showed that the suspicious file contained several embedded or associated files.
 
 As shown below, one appears to be a legitimate PNG image, while the remaining files required further investigation and could potentially be associated with the malicious payload.
 
+ ![Sub Files](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/sub%20files.png?raw=true)
+ 
 Network Indicators
 
 The analysis also provided useful information about the file’s network activity, including the IP addresses it contacted.
+![When Detected](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/when%20det.png?raw=true)
 
 I was also able to identify websites and domains associated with the distribution or detection of the same malicious file.
+![Websites](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/websites.png?raw=true)
 
 Key Findings
 
