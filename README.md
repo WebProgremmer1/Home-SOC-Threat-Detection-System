@@ -184,3 +184,7 @@ This project is intended strictly as a cybersecurity awareness demonstration in 
 
 
 ![Security Awareness Demo](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/scam.png?raw=true)
+
+
+
+I run my website on the local machine and whenever I type any password the program grab and basically i can do whatever i want. I further send requests to the legit website and log in. 
