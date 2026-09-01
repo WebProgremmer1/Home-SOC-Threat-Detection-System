@@ -170,3 +170,12 @@ What initially appeared to be an ordinary executable became suspicious after exa
 Hash analysis provided much stronger evidence, with 55 out of 69 antivirus engines identifying the file as malicious and associating it with Agent Tesla.
 
 This investigation demonstrated how combining Wireshark traffic analysis, file extraction, hash analysis, and threat intelligence can help identify malicious files that may otherwise appear legitimate.
+
+
+
+
+I decided to apply what I learned by creating a project that demonstrates how credential harvesting can work. I built a simulated login page that imitates a real service. When a user enters credentials, the system attempts to verify whether they are valid and, if they are, redirects the user to the legitimate website.
+
+From the user’s perspective, it may simply look as though the login page did not work correctly or refreshed unexpectedly. In reality, the entered credentials may already have been exposed.
+
+This project is intended strictly as a cybersecurity awareness demonstration in a controlled environment, showing how convincing phishing pages can be and why users should always verify the website address before entering sensitive information.
