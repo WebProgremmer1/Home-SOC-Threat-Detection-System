@@ -188,3 +188,7 @@ This project is intended strictly as a cybersecurity awareness demonstration in 
 
 
 I run my website on the local machine and whenever I type any password the program grab and basically i can do whatever i want. I further send requests to the legit website and log in. 
+
+![Output](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/output.png?raw=true)
+
+![Password](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/password%20.png?raw=true)
