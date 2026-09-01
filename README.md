@@ -187,8 +187,19 @@ This project is intended strictly as a cybersecurity awareness demonstration in 
 
 
 
-I run my website on the local machine and whenever I type any password the program grab and basically i can do whatever i want. I further send requests to the legit website and log in. 
+### Local Phishing Simulation
 
+For demonstration purposes, I hosted the test website entirely on my local machine in a controlled lab environment.
+
+The purpose of this experiment was to demonstrate how a phishing page can imitate a legitimate login process and capture information entered into a form. When test credentials were submitted through the simulated login page, the application recorded the submitted values in my local environment.
+
+This demonstrates an important security risk: a website can visually resemble a legitimate service while sending the information entered by the user to a completely different system. From the victim's perspective, the page may appear normal, making this type of attack difficult to recognize based on appearance alone.
+
+After capturing **dummy test credentials**, I manually verified the authentication flow against an account created specifically for the lab. No real users, production credentials, or third-party accounts were used.
+
+The experiment demonstrates why users should verify the domain name before entering credentials and why additional protections such as password managers, multi-factor authentication (MFA), and phishing-resistant authentication can significantly reduce the impact of credential-phishing attacks.
+
+> **Note:** This experiment was performed locally for educational and cybersecurity research purposes using test credentials and accounts under my control.
 ![Output](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/output.png?raw=true)
 
 ![Password](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/password%20.png?raw=true)
