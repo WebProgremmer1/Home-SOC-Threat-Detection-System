@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scam University Login Training Demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="login-panel" aria-labelledby="site-title">
+        <div class="brand">
+          <div class="crest" aria-hidden="true">
+            <div class="crest-top"></div>
+            <div class="crest-grid">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div>
+            <h1 id="site-title">Scam<span>University</span></h1>
+            <p>Security awareness demo</p>
+          </div>
+        </div>
+
+        <form id="login-form" autocomplete="off" novalidate>
+          <label class="field">
+            <span class="icon" aria-hidden="true">●</span>
+            <span class="sr-only">Username</span>
+            <input id="username" name="username" type="text" placeholder="Training username" autocomplete="off">
+          </label>
+
+          <label class="field">
+            <span class="icon lock" aria-hidden="true">■</span>
+            <span class="sr-only">Password</span>
+            <input id="password" name="password" type="password" placeholder="Training password" autocomplete="off">
+          </label>
+
+          <button type="submit">Log in</button>
+          <a class="forgot" href="#tips">Forgot your password?</a>
+        </form>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="training-log" aria-labelledby="log-title">
+        <div class="log-header">
+          <div>
+            <h2 id="log-title">Training Event Log</h2>
+            <p>Local-only records for awareness practice. Passwords are never saved.</p>
+          </div>
+          <div class="log-actions">
+            <button id="export-log" class="secondary-button" type="button">Export CSV</button>
+            <button id="clear-log" class="secondary-button danger" type="button">Clear</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Username</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="log-body">
+              <tr>
+                <td colspan="3">No training attempts yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tips" class="training">
+        <h2>How to use this safely</h2>
+        <p>This page is a local awareness demo. It never sends usernames or passwords anywhere.</p>
+        <ul>
+          <li>Use only the demo account: <strong>student.demo</strong> / <strong>training-only</strong>.</li>
+          <li>Do not copy a real university logo, crest, domain, or single sign-on flow.</li>
+          <li>For real training, get written authorization and use a phishing simulation platform or an approved test tenant.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
