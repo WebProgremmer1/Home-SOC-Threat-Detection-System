@@ -179,3 +179,6 @@ I decided to apply what I learned by creating a project that demonstrates how cr
 From the user’s perspective, it may simply look as though the login page did not work correctly or refreshed unexpectedly. In reality, the entered credentials may already have been exposed.
 
 This project is intended strictly as a cybersecurity awareness demonstration in a controlled environment, showing how convincing phishing pages can be and why users should always verify the website address before entering sensitive information.
+
+
+![Security Awareness Demo](https://github.com/WebProgremmer1/Home-SOC-Threat-Detection-System/blob/main/scam.png?raw=true)
