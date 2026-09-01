@@ -174,6 +174,8 @@ This investigation demonstrated how combining Wireshark traffic analysis, file e
 
 
 
+# Mini project
+
 I decided to apply what I learned by creating a project that demonstrates how credential harvesting can work. I built a simulated login page that imitates a real service. When a user enters credentials, the system attempts to verify whether they are valid and, if they are, redirects the user to the legitimate website.
 
 From the user’s perspective, it may simply look as though the login page did not work correctly or refreshed unexpectedly. In reality, the entered credentials may already have been exposed.
